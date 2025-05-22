@@ -4,7 +4,11 @@
 # Curate the timeline by adding a "where" expression to the assign on the first line.
 # For details, see https://collectionbuilder.github.io/cb-docs/docs/advanced/timelinejs/  
 ---
+<<<<<<< HEAD
 {%- assign items = site.data[site.metadata] | where_exp: 'item','item.date contains "1940"' -%}
+=======
+{%- assign items = site.data[site.metadata] | where_exp: 'item', 'item.date' -%}
+>>>>>>> parent of 90dcde7 (Change timeline frame / Map)
 {
     "title": {
         "media": {
