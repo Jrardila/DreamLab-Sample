@@ -154,10 +154,30 @@
         layer.bindPopup(popupTemplate);
     }
     /* function to add objects to map */
+
+    function getColor(feature){
+    switch (feature.properties["subject"]) {
+            case 'History museums':
+              return  'orange';
+            case 'Historic societies, historic preservation':
+              return 'green';
+            case 'church':
+              return 'blue';
+            case 'hotel':
+              return 'purple';
+            case 'dwelling':
+              return 'brown';
+            case 'mosque':
+              return 'lavender';
+            default:
+              return 'black';
+          }
+        }
+
     function objectMarkers(feature,latlng){
     var marker = new L.CircleMarker(latlng, {
              radius: 5,
-              color: "black",
+              color: getColor(feature),
              alt: feature.properties.title,
         });
     return marker;
