@@ -53,17 +53,31 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     var Esri_WorldGrayCanvas = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+<<<<<<< HEAD
+<<<<<<< HEAD
       attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
      maxZoom: 16
     });
 
 
+=======
+=======
+>>>>>>> parent of 0f2c6b3 (Original map file)
+        attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+        maxZoom: 16
+    });
+
+<<<<<<< HEAD
+>>>>>>> parent of 0f2c6b3 (Original map file)
+=======
+>>>>>>> parent of 0f2c6b3 (Original map file)
     /* add base map switcher */
     var baseMaps = {
         "Esri World StreetMap": Esri_WorldStreetMap,
         "Esri National Geo": Esri_NatGeoWorldMap,
         "Esri Imagery": Esri_WorldImagery,
-        "Open Street Map": OpenStreetMap_Mapnik
+        "Open Street Map": OpenStreetMap_Mapnik,
+        "Esri World Gray Canvas": Esri_WorldGrayCanvas
     };
     L.control.layers(baseMaps).addTo(map);
     /* load base map */
@@ -154,6 +168,7 @@
         layer.bindPopup(popupTemplate);
     }
     /* function to add objects to map */
+<<<<<<< HEAD
     var historicMarker = L.icon({
         iconUrl:'../assets/img/historic_marker.png',
         iconSize:[30,45],
@@ -166,6 +181,15 @@
             alt: feature.properties.title,
          });
     }
+=======
+    function objectMarkers(feature,latlng) {
+        var marker = L.marker(latlng, {alt: feature.properties.title});
+        {% if site.data.theme.map-cluster == true %}markers.addLayer(marker);{% endif %}
+        return marker;
+<<<<<<< HEAD
+>>>>>>> parent of 0f2c6b3 (Original map file)
+=======
+>>>>>>> parent of 0f2c6b3 (Original map file)
 
     /* use geoJson features to add objects to map */
     var mapFeatures = L.geoJson(geodata, {
