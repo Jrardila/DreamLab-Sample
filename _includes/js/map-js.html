@@ -154,18 +154,6 @@
         layer.bindPopup(popupTemplate);
     }
     /* function to add objects to map */
-
-    function getColor(feature){
-    switch (feature.properties["subject"]) {
-            case 'History museums':
-              return  'orange';
-            case 'Historic societies, historic preservation':
-              return 'green';
-            default:
-              return 'black';
-          }
-        }
-
     function objectMarkers(feature,latlng) {
         var marker = L.marker(latlng, {alt: feature.properties.title});
         {% if site.data.theme.map-cluster == true %}markers.addLayer(marker);{% endif %}
